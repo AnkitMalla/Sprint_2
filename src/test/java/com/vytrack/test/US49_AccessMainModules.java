@@ -17,6 +17,12 @@ public class US49_AccessMainModules {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
+    //log in as manager
+    @Test
+    public void login_manager_credentials(){
+
+    }
+
 
 
 
