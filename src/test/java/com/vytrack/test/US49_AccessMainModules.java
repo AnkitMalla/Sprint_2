@@ -83,13 +83,50 @@ public class US49_AccessMainModules {
         String expectedSyst = "System";
         String actualSyst = systTest.getText();
         Assert.assertEquals(actualSyst, expectedSyst);
+    }
+
+
+
+    //log in as driver
+
+    @Test
+    public void login_driver_credentials() {
+        //Enter username
+        WebElement userName1 = driver.findElement(By.xpath("//input[@id='prependedInput']"));
+        userName1.sendKeys("user172");
+
+        //Enter password
+        WebElement password1 = driver.findElement(By.xpath("//input[@id='prependedInput2']"));
+        password1.sendKeys("UserUser123" + Keys.ENTER);
+
+        //Login successfully. Verify user see 4 modules
+
+        //1. Verify Fleet
+        WebElement fleet2 = driver.findElement(By.xpath("//li[@class='dropdown dropdown-level-1'][1]"));
+        String expectedFleet2 = "Fleet";
+        String actualFleet2 = fleet2.getText();
+        Assert.assertEquals(actualFleet2,expectedFleet2);
+
+        //2. Verify Customers
+        WebElement custer2 = driver.findElement(By.xpath("//li[@class='dropdown dropdown-level-1'][2]"));
+        String expectedCuster2 = "Customers";
+        String actualCusters2 = custer2.getText();
+        Assert.assertEquals(actualCusters2,expectedCuster2);
+
+        //3. Verify Activities
+        WebElement active2 = driver.findElement(By.xpath("//li[@class='dropdown dropdown-level-1'][3]"));
+        String expectedActive2 = "Activities";
+        String actualActive2 = active2.getText();
+        Assert.assertEquals(actualActive2, expectedActive2);
+
+        //4. Verify System
+        WebElement syst2 = driver.findElement(By.xpath("//li[@class='mobile-hide dropdown dropdown-level-1 last']"));
+        String expectedSyst2 = "System";
+        String actualSyst2 = syst2.getText();
+        Assert.assertEquals(actualSyst2,expectedSyst2);
 
     }
 
-    @AfterMethod
-    public void tearDown(){
-        driver.quit();
-    }
 
 
 
