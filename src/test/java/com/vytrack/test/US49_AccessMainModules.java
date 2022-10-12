@@ -105,7 +105,7 @@ public class US49_AccessMainModules {
         WebElement fleet2 = driver.findElement(By.xpath("//li[@class='dropdown dropdown-level-1'][1]"));
         String expectedFleet2 = "Fleet";
         String actualFleet2 = fleet2.getText();
-        Assert.assertEquals(actualFleet2,expectedFleet2);
+        Assert.assertEquals(actualFleet2, expectedFleet2);
 
         //2. Verify Customers
         WebElement custer2 = driver.findElement(By.xpath("//li[@class='dropdown dropdown-level-1'][2]"));
@@ -126,6 +126,13 @@ public class US49_AccessMainModules {
         Assert.assertEquals(actualSyst2,expectedSyst2);
 
     }
+
+    @AfterMethod
+    public void tearDown(){
+        driver.quit();
+    }
+
+
 
 
 
